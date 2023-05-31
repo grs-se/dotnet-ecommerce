@@ -1,11 +1,12 @@
 ﻿using Core.Entities;
+using Core.Specifications;
+using Microsoft.EntityFrameworkCore;
 
-namespace Core.Specifications
+namespace Infrastructure.Data
 {
     public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
     {
-        public static IQueryable<TEntity> GetQuery(
-            IQueryable<TEntity> inputQuery,
+        public static IQueryable<TEntity> GetQuery(IQueryable<TEntity> inputQuery,
             ISpecification<TEntity> spec)
         {
             var query = inputQuery;
